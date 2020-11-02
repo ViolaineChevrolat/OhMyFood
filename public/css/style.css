@@ -1,0 +1,363 @@
+/*@import "./libs/responsive.scss";*/
+body {
+  font-family: roboto, calibri, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+}
+.header__logo {
+  margin: 0.8em;
+  display: flex;
+  justify-content: center;
+}
+
+.header-choice {
+  margin: 0;
+  background-color: #f5f4f4;
+}
+.header-choice h1 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  font-family: roboto, calibri, sans-serif;
+  text-align: center;
+  margin: 1.5em 1.3em 0.7em 1.3em;
+}
+.header-choice p {
+  font-size: 1em;
+  text-align: center;
+  line-height: 1.2em;
+  margin: 0.8em 1em 2em 1em;
+}
+
+.header-nav {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(#929191, #e4e3e3, #e4e3e3, #e4e3e3, #e4e3e3);
+  text-align: center;
+  padding-bottom: 0.5em;
+}
+.header-nav form {
+  padding-top: 0.5em;
+}
+.header-nav input[type=text] {
+  border: none;
+  background-color: #e4e3e3;
+  font-weight: bold;
+  color: black;
+}
+.header-nav i {
+  font-size: 1em;
+  padding-left: 5em;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#FF79DA, #9356DC);
+  border-radius: 25px;
+  color: white;
+  font-weight: 600;
+  box-shadow: 2px 4px 4px #b1b0b0;
+  padding: 0.1em 0;
+  margin: 2em 3em 4em 3em;
+}
+.button p {
+  width: 226px;
+  text-align: center;
+  margin: 1em 0 1.2em 0;
+}
+
+main {
+  margin: 0;
+}
+
+.regles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1em;
+}
+.regles h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: roboto, calibri, sans-serif;
+  margin: 1em 1em 0.5em 1em;
+}
+.regles ol {
+  text-decoration: none;
+}
+.regles li {
+  justify-content: center;
+  font-size: 0.9em;
+  font-weight: bold;
+  border: 1px solid #f5f4f4;
+  border-radius: 20px;
+  box-shadow: 2px 2px 8px 2px #b1afaf;
+  margin: 1em 2em 2em 0.5em;
+  padding: 1.2em 1em 1.5em 1em;
+}
+.regles li:hover {
+  background-color: #fd99e1a9;
+}
+.regles li i {
+  padding-right: 1em;
+  color: #929191;
+}
+
+.restaurants {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f5f4f4;
+}
+.restaurants h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: roboto, calibri, sans-serif;
+  margin: 1em 1em 0.5em 1em;
+  padding-top: 1em;
+}
+.restaurants-list {
+  justify-content: center;
+  border: 0 white solid;
+  border-radius: 20px;
+  box-shadow: 2px 2px 8px 2px #b1afaf;
+  background-color: white;
+  margin: 1em;
+  height: auto;
+  position: relative;
+}
+.restaurants-list a:hover {
+  text-decoration: none;
+}
+.restaurants-list__details {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: black;
+  margin: 0 1em 0.5em 1em;
+  line-height: 0.5em;
+}
+.restaurants-list__details h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.restaurants-list figure {
+  margin-bottom: 0.8em;
+}
+.restaurants-list img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  border-radius: 18px 18px 0 0;
+}
+
+.restaurants {
+  padding-bottom: 2.5em;
+}
+
+.restaurants-list__new1 {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  background: #99E2D0;
+  border: 1px solid #99E2D0;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  color: #28967c;
+}
+
+.restaurants-list__new2 {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  background: #99E2D0;
+  border: 1px solid #99E2D0;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  color: #28967c;
+}
+
+.heart {
+  font-size: 1.5em;
+  text-align: right;
+  color: black;
+  position: relative;
+  top: 0.3em;
+}
+
+.footer {
+  display: flex;
+  /*flex-direction: column;*/
+  padding: 2em 1em 2em 1.5em;
+  background-color: #3a3939;
+  flex-direction: column;
+}
+.footer img {
+  width: 100px;
+  padding-bottom: 1.2em;
+}
+.footer i {
+  flex-direction: wrap;
+  padding-right: 0.8em;
+}
+.footer .fa-hands-helping {
+  font-size: 0.8em;
+}
+
+.footer-a {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.3em;
+}
+.footer-a a {
+  color: white;
+}
+.footer-a a:hover {
+  text-decoration: none;
+}
+
+.header-restaurant {
+  position: relative;
+}
+.header-restaurant img {
+  width: 100%;
+  position: relative;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  bottom: 3em;
+  margin: 0;
+  padding-top: 1em;
+  border: 1px solid #f5f4f4;
+  border-radius: 30px 30px 0 0;
+  background-color: #f5f4f4;
+  padding-bottom: 1em;
+}
+.menu h3 {
+  font-size: 1.2em;
+}
+
+.trait {
+  border: 1px #99E2D0 solid;
+  width: 3.5em;
+}
+
+.menu-title {
+  font-family: Shrikhand;
+  font-size: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: black;
+  margin: 1em 1em 0.5em 1em;
+}
+.menu-title i {
+  font-size: 1.5em;
+  margin-right: 0.3em;
+}
+
+.menu_soustitle {
+  margin: 1em 1em 2em 1em;
+}
+
+.menu-plats {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 2px 2px 8px 2px #b1afaf;
+  margin: 1em 0 0 0;
+  padding: 0.8em 0.8em 0 0.8em;
+}
+.menu-plats h4 {
+  font-weight: bold;
+  font-size: 1.3em;
+  margin-bottom: 0;
+}
+
+.menu-plats__details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 568px) {
+  .regles {
+    display: flex;
+    align-items: center;
+  }
+  .regles ol {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .regles ol li {
+    align-items: center;
+  }
+}
+@media screen and (min-width: 767px) {
+  .restaurants h2 {
+    text-align: center;
+  }
+
+  .restos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .restos .restaurants-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 350px;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+  .footer-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-a {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .menu_menus {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

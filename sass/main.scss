@@ -1,0 +1,344 @@
+
+@import "./utils/variable.scss";
+
+@import "./utils/mixins.scss";
+
+/*@import "./libs/responsive.scss";*/
+
+
+
+body {
+    font-family: roboto, calibri, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+// header
+
+.header {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    &__logo {
+        margin: 0.8em;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+.header-choice {
+    margin: 0;
+    background-color: $border-color;
+    & h1 {
+        font-size: 1.4rem;
+        font-weight: 900;
+        font-family: roboto, calibri, sans-serif;
+        text-align: center;
+        margin: 1.5em 1.3em 0.7em 1.3em;
+    }
+    & p {
+        font-size: 1em;
+        text-align: center;
+        line-height: 1.2em;
+        margin: 0.8em 1em 2em 1em;
+    }
+}
+
+.header-nav {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(rgb(146, 145, 145), rgb(228, 227, 227), rgb(228, 227, 227), rgb(228, 227, 227), rgb(228, 227, 227));
+    text-align: center;
+    padding-bottom: 0.5em;
+    & form {
+        padding-top: 0.5em;
+    }
+        & input[type=text] {
+            border: none;
+            background-color: rgb(228, 227, 227);
+            font-weight: bold;
+            color: black;
+        }
+        & i {
+            font-size: 1em;
+            padding-left: 5em;
+        }
+}
+
+.button {
+    @include button;
+    & p {
+        width: 226px;
+        text-align: center;
+        margin: 1em 0 1.2em 0;
+     }
+}
+
+main {
+    margin: 0;
+}
+
+.regles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1em;
+    & h2 {
+        @include titres;
+    }
+    & ol {
+        text-decoration: none;
+    }
+    & li {
+        justify-content: center;
+        font-size: 0.9em;
+        font-weight: bold;
+        @include border-radius;
+        margin: 1em 2em 2em 0.5em;
+        padding: 1.2em 1em 1.5em 1em;
+        &:hover {
+            background-color: #fd99e1a9;
+            }
+        & i {
+            padding-right: 1em;
+            color: rgb(146, 145, 145);
+        }
+    }
+
+}
+
+// restaurants
+
+.restaurants {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $border-color;
+    & h2 {
+        @include titres;
+        padding-top: 1em;
+    }
+
+    &-list {
+        @include vignettes;
+        position: relative;
+        & a:hover {
+            text-decoration: none;
+        }
+        &__details {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            @include details;
+            & h3 {
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+
+        }
+        & figure {
+            margin-bottom: 0.8em;
+        }
+        & img {
+            object-fit: cover;
+            width: 100%;
+            height: auto;
+            border-radius: 18px 18px 0 0;
+        }
+    
+    }
+}
+
+.restaurants {
+    padding-bottom: 2.5em;
+}
+
+.restaurants-list__new1 {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    background: $color-tertiaire;
+    border: 1px solid $color-tertiaire;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    color: #28967c;
+}
+
+.restaurants-list__new2 {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    background: $color-tertiaire;
+    border: 1px solid $color-tertiaire;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    color: #28967c;
+}
+
+.heart {
+    font-size: 1.5em;   
+    text-align: right;
+    color: black;
+    position: relative;
+    top: 0.3em;
+}
+
+
+
+.footer {
+    @include footer;
+    flex-direction: column;
+    & img {
+        width: 100px;
+        padding-bottom: 1.2em;
+    }
+        & i {
+            flex-direction: wrap;
+            padding-right: 0.8em;
+        }
+    & .fa-hands-helping {
+        font-size: 0.8em;
+    }
+}
+
+.footer-a {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.3em;
+    & a {
+        color: white;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+
+// fiches restaurants
+
+.header-restaurant {
+    position: relative;
+        & img {
+        width: 100%;
+        position: relative;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+    @include menu;
+    padding-bottom: 1em;
+    & h3 {
+        font-size: 1.2em;
+    }
+}
+
+.trait {
+    border: 1px $color-tertiaire solid;
+    width: 3.5em;
+}
+
+.menu-title {
+    @include resto-titre;
+    & i {
+        font-size: 1.5em;
+        margin-right: 0.3em;
+    }
+}
+
+.menu_soustitle {
+    margin: 1em 1em 2em 1em;
+}
+
+.menu-plats {
+    @include menu-plats;
+    & h4 {
+        font-weight: bold;
+        font-size: 1.3em;
+        margin-bottom: 0;
+    }
+}
+
+.menu-plats__details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+@media screen and (min-width: 568px) {
+
+    .regles {
+        display: flex;
+        align-items: center;
+        & ol {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 100%;
+            & li {
+                align-items: center;
+            }
+        }
+
+    }
+
+
+}
+
+@media screen and (min-width: 767px) {
+
+
+    .restaurants h2 {
+        text-align: center;
+    }
+
+    .restos {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        & .restaurants-list {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            max-width: 350px;
+        }
+    }
+
+    .footer {
+        flex-direction: column;
+        &-logo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .footer-a {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .menu_menus {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
