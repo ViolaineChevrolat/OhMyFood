@@ -4,11 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Ohmyfood</title>
+	<link rel="stylesheet" href="public/css/style.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="public/css/style.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
 </head>
 
@@ -30,10 +29,9 @@
 		<div class="header header-choice">
 			<h1>Réservez le menu qui vous convient</h1>
 			<p>Découvrez ces restaurants d'exception, sélectionnés par nos soins</p>
-
-			<div class="button">
-				<p>Explorez nos restaurants</p>
-			</div>
+			<p class="button">
+				<a href="#les-restaurants">Explorez nos restaurants</a>
+			</p>
 		</div>
 
 
@@ -42,15 +40,13 @@
 	<main>
 		<div class="regles">
 			<h2>Fonctionnement</h2>
-			<ol>
-				<li><i class="fas fa-mobile-alt"></i>Choisissez un restaurant</li>
-				<li><i class="fas fa-list-ul"></i>Composez votre menu</li>
-				<li><i class="fas fa-store"></i>Dégustez au restaurant</li>
-			</ol>
+			<p><span>1</span><i class="fas fa-mobile-alt"></i>Choisissez un restaurant</p>
+			<p><span>2</span><i class="fas fa-list-ul"></i>Composez votre menu</p>
+			<p><span>3</span><i class="fas fa-store"></i>Dégustez au restaurant</p>
 		</div>
 
 		<section class="restaurants">
-			<h2>Restaurants</h2>
+			<h2 id="les-restaurants">Restaurants</h2>
 			<div class="restos">
 				<article class="restaurants-list">
 					<a href="la_palette_du_goût.html">

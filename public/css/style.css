@@ -6,18 +6,16 @@ body {
 }
 
 .header {
-  display: flex;
-  flex-direction: column;
   margin-top: 1em;
 }
 .header__logo {
-  margin: 0.8em;
-  display: flex;
   justify-content: center;
+  margin: 0.8em;
 }
 
 .header-choice {
-  margin: 0;
+  padding: 1em 0;
+  margin-top: 0;
   background-color: #f5f4f4;
 }
 .header-choice h1 {
@@ -25,18 +23,16 @@ body {
   font-weight: 900;
   font-family: roboto, calibri, sans-serif;
   text-align: center;
-  margin: 1.5em 1.3em 0.7em 1.3em;
+  margin: 1em;
 }
 .header-choice p {
   font-size: 1em;
   text-align: center;
   line-height: 1.2em;
-  margin: 0.8em 1em 2em 1em;
+  margin: 1em;
 }
 
 .header-nav {
-  display: flex;
-  flex-direction: column;
   background: linear-gradient(#929191, #e4e3e3, #e4e3e3, #e4e3e3, #e4e3e3);
   text-align: center;
   padding-bottom: 0.5em;
@@ -52,26 +48,23 @@ body {
 }
 .header-nav i {
   font-size: 1em;
-  padding-left: 5em;
+  /*padding-left: 5em;*/
 }
 
 .button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
+  display: block;
   background: linear-gradient(#FF79DA, #9356DC);
   border-radius: 25px;
-  color: white;
+  text-align: center;
   font-weight: 600;
   box-shadow: 2px 4px 4px #b1b0b0;
-  padding: 0.1em 0;
-  margin: 2em 3em 4em 3em;
+  padding: 1em 2em;
+  margin: 1.5em;
 }
-.button p {
-  width: 226px;
-  text-align: center;
-  margin: 1em 0 1.2em 0;
+.button a {
+  color: white;
+  text-decoration: none;
 }
 
 main {
@@ -90,25 +83,31 @@ main {
   font-family: roboto, calibri, sans-serif;
   margin: 1em 1em 0.5em 1em;
 }
-.regles ol {
-  text-decoration: none;
-}
-.regles li {
+.regles p {
   justify-content: center;
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: bold;
   border: 1px solid #f5f4f4;
   border-radius: 20px;
   box-shadow: 2px 2px 8px 2px #b1afaf;
-  margin: 1em 2em 2em 0.5em;
+  margin: 1em;
   padding: 1.2em 1em 1.5em 1em;
 }
-.regles li:hover {
+.regles p:hover {
   background-color: #fd99e1a9;
 }
-.regles li i {
+.regles p i {
+  font-size: 1.2em;
   padding-right: 1em;
   color: #929191;
+}
+.regles span {
+  color: white;
+  border: 1px solid #FF79DA;
+  border-radius: 20px;
+  background-color: #FF79DA;
+  padding: 0.5em;
+  margin: 0 1em 0 -1em;
 }
 
 .restaurants {
@@ -134,7 +133,13 @@ main {
   height: auto;
   position: relative;
 }
-.restaurants-list a:hover {
+.restaurants-list figure {
+  margin: 0;
+}
+.restaurants-list a {
+  text-decoration: none;
+}
+.restaurants-list a a:hover {
   text-decoration: none;
 }
 .restaurants-list__details {
@@ -145,13 +150,11 @@ main {
   color: black;
   margin: 0 1em 0.5em 1em;
   line-height: 0.5em;
+  margin-top: -0.5em;
 }
 .restaurants-list__details h3 {
   font-size: 1.2em;
   font-weight: bold;
-}
-.restaurants-list figure {
-  margin-bottom: 0.8em;
 }
 .restaurants-list img {
   object-fit: cover;
@@ -170,6 +173,7 @@ main {
   top: 1em;
   background: #99E2D0;
   border: 1px solid #99E2D0;
+  border-radius: 3px;
   font-size: 1em;
   font-weight: bold;
   text-align: center;
@@ -183,6 +187,7 @@ main {
   top: 1em;
   background: #99E2D0;
   border: 1px solid #99E2D0;
+  border-radius: 3px;
   font-size: 1em;
   font-weight: bold;
   text-align: center;
@@ -195,7 +200,7 @@ main {
   text-align: right;
   color: black;
   position: relative;
-  top: 0.3em;
+  top: 0.6em;
 }
 
 .footer {
@@ -224,51 +229,60 @@ main {
 }
 .footer-a a {
   color: white;
+  text-decoration: none;
 }
 .footer-a a:hover {
   text-decoration: none;
 }
 
+.header__logo {
+  display: flex;
+  flex-direction: row;
+}
+
 .header-restaurant {
   position: relative;
+  z-index: 1;
 }
 .header-restaurant img {
   width: 100%;
-  position: relative;
+  /*position: relative;*/
 }
 
 .menu {
-  display: flex;
-  flex-direction: column;
+  /*display: flex;
+  flex-direction: column;*/
   position: relative;
-  height: 100%;
+  /*height: 100%;*/
   display: flex;
   flex-direction: column;
-  bottom: 3em;
-  margin: 0;
-  padding-top: 1em;
+  margin: -3em 0 0 0;
+  /*padding-top: 1em;*/
   border: 1px solid #f5f4f4;
   border-radius: 30px 30px 0 0;
   background-color: #f5f4f4;
-  padding-bottom: 1em;
+  /*padding-bottom: 1em;*/
+  z-index: 2;
 }
 .menu h3 {
   font-size: 1.2em;
+  font-weight: 400;
+  margin-bottom: 0.5em;
 }
 
 .trait {
-  border: 1px #99E2D0 solid;
-  width: 3.5em;
+  border: 2px #99E2D0 solid;
+  width: 3em;
 }
 
 .menu-title {
   font-family: Shrikhand;
-  font-size: 1em;
+  font-size: 1.1em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   color: black;
-  margin: 1em 1em 0.5em 1em;
+  margin: 0.5em 1em 0.5em 1em;
 }
 .menu-title i {
   font-size: 1.5em;
@@ -291,29 +305,39 @@ main {
 }
 .menu-plats h4 {
   font-weight: bold;
-  font-size: 1.3em;
-  margin-bottom: 0;
+  font-size: 1.1em;
+  margin: 0;
 }
 
 .menu-plats__details {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-size: 0.9em;
+  line-height: 0.5em;
+  margin-top: 0;
+}
+.menu-plats__details p {
+  margin: 0.8em 0;
 }
 
 @media screen and (min-width: 568px) {
   .regles {
-    display: flex;
     align-items: center;
-  }
-  .regles ol {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+  }
+  .regles h2 {
+    text-align: center;
     width: 100%;
   }
-  .regles ol li {
+  .regles p {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
   }
 }
