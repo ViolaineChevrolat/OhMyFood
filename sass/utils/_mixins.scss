@@ -19,12 +19,12 @@
 }
 
 @mixin button ($color: $color-secondaire) {
-    display: block;
     background: linear-gradient($color, $color-primaire);
     border-radius: 25px;
     text-align: center;
+    font-size: 1em;
     font-weight: 600;
-    box-shadow: 2px 4px 4px rgb(177, 176, 176);
+    box-shadow: 3px 3px 3px rgb(177, 176, 176);
     padding: 1em 2em;
     margin: 1.5em;
 }
@@ -32,10 +32,13 @@
 @mixin choice-number {
     color: white;
     border: 1px solid $color-secondaire;
-    border-radius: 20px;
+    border-radius: 30px;
     background-color: $color-secondaire;
+    text-align: center;
+    width: 1rem;
+    height: 1rem;
     padding: 0.5em;
-    margin: 0 1em 0 -1em;
+    margin: 0 1em 0 -2em;
 }
 
 @mixin vignettes {
@@ -106,3 +109,28 @@
     margin: 1em 0 0 0;
     padding: 0.8em 0.8em 0 0.8em;
 } 
+/*
+@mixin checked {
+    .prix {
+        :hover + .checked {
+            transform: scale(1);
+            transform: rotate(0deg); 
+            .far {
+                transform: translateY(0);
+            }
+        }
+    }
+    .checked {
+        color: white;
+        background-color: $color-tertiaire;
+        overflow: hidden;
+        transform: scale(.1) rotate(-90deg);
+        transition: transform 330ms ease-in-out;
+        .far {
+            transform: translateY(250%);
+            transition: transform 280ms ease-out 50ms;
+            display: block;
+    
+        } 
+    }
+}*/
