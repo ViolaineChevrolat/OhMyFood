@@ -390,8 +390,28 @@ main {
   width: 100%;
 }
 
+/*
+
+.animation-zoom {
+    animation-name: zoomIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    }
+
+    @keyframes zoomIn {
+    0% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+    }
+    50% {
+    opacity: 1;
+    }
+    } 
+
+*/
 .menu {
   position: relative;
+  background: white;
   display: flex;
   flex-direction: column;
   margin: -3em 0 0 0;
@@ -469,42 +489,64 @@ main {
   display: flex;
   flex-direction: row;
   text-align: right;
-  position: relative;
   cursor: pointer;
+  transform: translateX(0px);
+  transition: transform 1000ms ease 200ms;
 }
 .prix-valid:hover {
-  transform: translateX(-100px);
-}
-.prix-valid:hover i:hover {
-  overflow: visible;
-  transform: translateX(-100px) rotate(-360deg);
+  transform: translateX(-80px);
 }
 
 .menu-plats__prix {
   font-weight: 800;
   font-size: 1.2em;
-  transform: translateX(0);
-  transition: transform 1000ms ease-in-out 800ms;
+  padding-bottom: 0.5em;
+  text-align: center;
+}
+.menu-plats__prix i {
+  font-size: 1.8em;
+  opacity: 0;
+}
+.menu-plats__prix i:hover {
+  color: grey;
+  animation-name: valid;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+
+@keyframes valid {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+.menu-plats__prix span {
+  padding-left: 0.5em;
 }
 
 .menu-plats__valid {
-  border: 0px solid white;
-  border-radius: 10px;
-  background-color: #99E2D0;
-  display: none;
-}
-.menu-plats__valid.far {
+  border: 0 solid #99E2D0;
+  border-radius: 0 10px 10px 0;
+  background: transparent;
+  height: 100%;
+  width: auto;
   font-weight: 800;
-  font-size: 1.2em;
-  color: white;
-  position: absolute;
-  margin-right: -2em;
+  font-size: 2.5em;
+  margin-top: -0.4em;
+  margin-right: 0;
+  margin-bottom: 0;
+  padding: 0.45em 0.5em 0 0.5em;
   overflow: hidden;
-  transform: translateX(0) rotate(0deg);
-  transition: transform 1000ms ease-in-out 800ms;
+  position: absolute;
+  transform: rotate(90deg);
+  transition: transform 1000ms ease;
 }
-.menu-plats__valid.far:hover {
-  display: run-in;
+.menu-plats__valid:hover {
+  transform: rotate(360deg);
 }
 
 .bouton-commander {

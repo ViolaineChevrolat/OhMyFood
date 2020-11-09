@@ -328,10 +328,35 @@ main {
         & img {
         width: 100%;
     }
-}
+}    
+
+
+
+//animation
+/*
+
+.animation-zoom {
+    animation-name: zoomIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    }
+
+    @keyframes zoomIn {
+    0% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+    }
+    50% {
+    opacity: 1;
+    }
+    } 
+
+*/
+
 
 .menu {
     position: relative;
+    background: white;
     @include menu;
     & h3 {
         font-size: 1.2em;
@@ -394,43 +419,68 @@ main {
     display: flex;
     flex-direction: row;
     text-align: right;
-    position: relative;
     cursor: pointer;
+    transform: translateX(0px);
+    transition: transform 1000ms ease 200ms;
     &:hover {
-        transform: translateX(-100px);
-        & i:hover{
-            overflow: visible;
-            transform: translateX(-100px) rotate(-360deg);
-        }
+        transform: translateX(-80px);
     }
 }
 
 .menu-plats__prix { 
     font-weight: 800;
     font-size: 1.2em;
-    transform: translateX(0);
-    transition: transform 1000ms ease-in-out 800ms;
+    padding-bottom: 0.5em;
+    text-align: center;
+    & i {
+        font-size: 1.8em;
+        opacity: 0;
+        &:hover {
+            color: grey;
+            animation-name: valid;
+            animation-duration: 2s;
+            animation-fill-mode: both;
+        }
+    }
 }
 
-.menu-plats__valid {
-    border: 0px solid white;
-    border-radius: 10px;
-    background-color: $color-tertiaire;
-    display: none;
-    &.far {
-    font-weight: 800;
-    font-size: 1.2em;
-    color: white;
-    position: absolute;
-    margin-right: -2em;
-    overflow: hidden;
-    transform: translateX(0) rotate(0deg);
-    transition: transform 1000ms ease-in-out 800ms;
-    &:hover {
-        display: run-in;
+@keyframes valid {
+    0% {
+    opacity: 0;
+    transform: translateX(20px);
     }
+    100% {
+    opacity: 1;
+    transform: none;
     }
+} 
+
+.menu-plats__prix span {
+    padding-left: 0.5em;
 }
+
+
+.menu-plats__valid {
+    border: 0 solid $color-tertiaire;
+    border-radius: 0 10px 10px 0;
+    background: transparent;
+    height: 100%;
+    width: auto;
+    font-weight: 800;
+    font-size: 2.5em;
+    margin-top: -0.4em;
+    margin-right: 0;
+    margin-bottom: 0;
+    padding: 0.45em 0.5em 0 0.5em;
+    overflow: hidden;
+    position: absolute;
+    transform: rotate(90deg);
+    transition: transform 1000ms ease;
+    &:hover {
+        transform: rotate(360deg);
+    }   
+}
+
 
 .bouton-commander {
     display: inline-block;
