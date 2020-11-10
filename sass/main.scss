@@ -12,7 +12,7 @@ body {
     margin: 0;
 }
 
-.anim-loader {
+/*.anim-loader {
     font-family: Shrikhand;
     font-size: 2em;
     text-align: center;
@@ -73,7 +73,7 @@ body {
         opacity: 0;
     }
 }
-
+*/
 
 
 // header
@@ -129,11 +129,8 @@ body {
 
 .button {
     @include button;
-    opacity: 1;
     &:hover {
-        opacity: 0.8;
-        box-shadow: -1px 1px 11px 5px rgba(0, 0, 0, 0.603);
-        transition-duration: 300ms;
+        animation: anim-shadow-button 0.3s both;
     }
     outline: none;
         & a {
@@ -143,9 +140,16 @@ body {
     }
 }
 
-.anim-loader {
-    pointer-events: none;
-}
+@keyframes anim-shadow-button {
+    0% {
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+      opacity: 1;
+    }
+    100% {
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.35);
+      opacity: 0.95;
+    }
+  }
 
 
 main {
@@ -198,7 +202,6 @@ main {
         @include titres;
         padding-top: 1em;
     }
-
     &-list {
         @include vignettes;
         position: relative;
@@ -248,22 +251,18 @@ main {
     @include new;
 }
 
-.heart {
-    font-size: 1.5em;   
-    text-align: right;
+.index-heart {
+    @include heart;
     & i {
-        position: relative;
-        top: 0.6em;
+        margin-top: 0.6em;
         &:hover {
             clip-path: polygon(51% 22%, 44% 10%, 33% 6%, 19% 6%, 6% 12%, 0 26%, 4% 46%, 11% 58%, 24% 72%, 36% 83%, 54% 98%, 69% 84%, 80% 72%, 91% 57%, 98% 45%, 99% 28%, 96% 12%, 84% 5%, 72% 5%, 60% 9%);
             background-image: $color-button;
-            display: initial;
             -webkit-text-fill-color: transparent;
             transition-duration: 300ms;
         }
     }
 }
-
 
 .footer {
     @include footer;
@@ -326,38 +325,31 @@ main {
     position: relative;
     z-index: 1;
         & img {
+        object-fit: cover;
+        height: 250px;
         width: 100%;
     }
 }    
 
-
-
-//animation
-/*
-
-.animation-zoom {
-    animation-name: zoomIn;
-    animation-duration: 1s;
-    animation-fill-mode: both;
+.resto-heart {
+    @include heart;
+    & i {
+        position: relative;
+        &:hover {
+            clip-path: polygon(51% 22%, 44% 10%, 33% 6%, 19% 6%, 6% 12%, 0 26%, 4% 46%, 11% 58%, 24% 72%, 36% 83%, 54% 98%, 69% 84%, 80% 72%, 91% 57%, 98% 45%, 99% 28%, 96% 12%, 84% 5%, 72% 5%, 60% 9%);
+            background-image: $color-button;
+            -webkit-text-fill-color: transparent;
+            transition-duration: 300ms;
+        }
     }
-
-    @keyframes zoomIn {
-    0% {
-    opacity: 0;
-    transform: scale3d(.3, .3, .3);
-    }
-    50% {
-    opacity: 1;
-    }
-    } 
-
-*/
+}
 
 
 .menu {
     position: relative;
     background: white;
     @include menu;
+    text-overflow: ellipsis;
     & h3 {
         font-size: 1.2em;
         font-weight: 400;
@@ -389,7 +381,9 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .menu-plats__details {
@@ -420,10 +414,12 @@ main {
     flex-direction: row;
     text-align: right;
     cursor: pointer;
+    text-overflow: ellipsis;
     transform: translateX(0px);
     transition: transform 1000ms ease 200ms;
     &:hover {
         transform: translateX(-80px);
+        text-overflow: ellipsis;
     }
 }
 
@@ -431,10 +427,12 @@ main {
     font-weight: 800;
     font-size: 1.2em;
     padding-bottom: 0.5em;
+    text-overflow: ellipsis;
     text-align: center;
     & i {
         font-size: 1.8em;
         opacity: 0;
+        text-overflow: ellipsis;
         &:hover {
             color: grey;
             animation-name: valid;
@@ -455,37 +453,38 @@ main {
     }
 } 
 
-.menu-plats__prix span {
-    padding-left: 0.5em;
-}
-
 
 .menu-plats__valid {
-    border: 0 solid $color-tertiaire;
+    border: 1px solid $color-tertiaire;
     border-radius: 0 10px 10px 0;
-    background: transparent;
+    background: $color-tertiaire;
     height: 100%;
     width: auto;
     font-weight: 800;
     font-size: 2.5em;
-    margin-top: -0.4em;
-    margin-right: 0;
-    margin-bottom: 0;
-    padding: 0.45em 0.5em 0 0.5em;
+    margin: -0.3em 0 0.3em 1.2em;
+    padding: 0.3em 0.3em 0 0.3em;
+    text-overflow: ellipsis;
     overflow: hidden;
-    position: absolute;
-    transform: rotate(90deg);
-    transition: transform 1000ms ease;
+    position: absolute; 
+}
+
+.menu-plats__valid i {
+    text-align: center;
+    padding-top: 0.2em;
+    color: white;
+    transform: rotate(0deg);
+    transform-origin: 50% 40%;
+    transition: transform 1000ms;
     &:hover {
-        transform: rotate(360deg);
-    }   
+        transform: rotate(-360deg);
+    }  
 }
 
 
 .bouton-commander {
     display: inline-block;
     text-align: center;
-
 }
 
 .button_resto {
@@ -493,8 +492,7 @@ main {
     outline: none;
     opacity: 1;
     &:hover {
-        opacity: 0.9;
-        box-shadow: -1px 1px 11px 5px rgba(0, 0, 0, 0.603);
+        animation: anim-shadow-button 0.3s both;
     }
         & a {
         color: white;

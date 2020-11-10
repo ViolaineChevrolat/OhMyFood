@@ -18,6 +18,11 @@
     box-shadow: -1px 1px 11px 5px rgba(0,0,0,0.32);
 }
 
+@mixin heart {
+    font-size: 1.5em;   
+    text-align: right;
+}
+
 
 @mixin button ($color: $color-secondaire) {
     background-image: $color-button;
@@ -27,7 +32,7 @@
     font-size: 1em;
     font-weight: 600;
     cursor: pointer;
-    box-shadow: -1px 1px 11px 5px rgba(0,0,0,0.32);
+    /*box-shadow: -1px 1px 11px 5px rgba(0,0,0,0.32);*/
     border-style: none;
     padding: 1em 2em;
     margin: 1.5em;
@@ -109,35 +114,7 @@
     background-color: white;
     box-shadow: 2px 2px 8px 2px rgb(177, 175, 175);
     margin: 1em 0 0 0;
-    padding: 0.8em 0.8em 0 0.8em;
+    padding: 0.8em 0em 0 0.8em;
 } 
-/*
-@mixin checked {
-    .prix {
-        :hover + .checked {
-            transform: scale(1);
-            transform: rotate(0deg); 
-            .far {
-                transform: translateY(0);
-            }
-        }
-    }
-    .checked {
-        color: white;
-        background-color: $color-tertiaire;
-        overflow: hidden;
-        transform: scale(.1) rotate(-90deg);
-        transition: transform 330ms ease-in-out;
-        .far {
-            transform: translateY(250%);
-            transition: transform 280ms ease-out 50ms;
-            display: block;
-    
-        } 
-    }
-}*/
 
-/*@keyframes checked {
-    0%
-}*/
 
