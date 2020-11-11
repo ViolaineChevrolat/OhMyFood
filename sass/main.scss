@@ -178,14 +178,14 @@ main {
         cursor: pointer;
         &:hover {
             background: hsl(317, 100%, 95%);
+            & i {
+                color: $color-primaire;
+            }
         }
         & i {
             font-size: 1.2em;
             padding-right: 1em;
             color: rgb(146, 145, 145);
-            &:hover {
-                color: $color-primaire;
-            }
         }
     }
 }
@@ -299,7 +299,6 @@ main {
 
 .header__logo {
     display: block;
-    width: 100%;
     text-align: start;
     & a {
         cursor: pointer;
@@ -398,7 +397,6 @@ main {
 .menu-plats__details {
     display: inline;
     margin-top: 0;
-    /*width: 100%;*/
     text-align: left;
     white-space: nowrap;
     overflow: hidden;

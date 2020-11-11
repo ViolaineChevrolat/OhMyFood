@@ -32,7 +32,6 @@
     font-size: 1em;
     font-weight: 600;
     cursor: pointer;
-    /*box-shadow: -1px 1px 11px 5px rgba(0,0,0,0.32);*/
     border-style: none;
     padding: 1em 2em;
     margin: 1.5em;
@@ -42,12 +41,10 @@
 @mixin choice-number {
     color: white;
     border: 0 solid $color-primaire;
-    border-radius: 20px;
+    border-radius: 150%;
     background-color: $color-primaire;
     text-align: center;
-    width: 20px;
-    height: auto;
-    padding: 0.5em;
+    padding: 0.4em 0.7em;
     margin: 0 1em 0 -2em;
 }
 
