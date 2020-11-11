@@ -423,7 +423,7 @@ main {
 
 .menu-plats {
   max-width: 736px;
-  border: 1px solid white;
+  border: 0 solid white;
   border-radius: 10px;
   background-color: white;
   box-shadow: 2px 2px 8px 2px #b1afaf;
@@ -435,15 +435,24 @@ main {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  cursor: pointer;
+  /*&:hover .prix-valid {
+      animation: valid 2s both forwards linear infinite;
+      & .menu-plats__valid i {
+          animation: valid-rotate 2s both forwards linear infinite;
+      }
+  } */
 }
 
 .menu-plats__details {
   display: inline;
   margin-top: 0;
+  /*width: 100%;*/
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  z-index: 1;
 }
 .menu-plats__details h4 {
   font-weight: bold;
@@ -464,8 +473,8 @@ main {
   display: flex;
   flex-direction: row;
   text-align: right;
-  cursor: pointer;
   text-overflow: ellipsis;
+  z-index: 2;
   transform: translateX(0px);
   transition: transform 1000ms ease 200ms;
 }
@@ -477,38 +486,32 @@ main {
 .menu-plats__prix {
   font-weight: 800;
   font-size: 1.2em;
-  padding-bottom: 0.5em;
+  margin-right: 0.5em;
   text-overflow: ellipsis;
-  text-align: center;
+  text-align: right;
 }
 .menu-plats__prix i {
   font-size: 1.8em;
   opacity: 0;
   text-overflow: ellipsis;
-}
-.menu-plats__prix i:hover {
-  color: grey;
-  animation-name: valid;
-  animation-duration: 2s;
-  animation-fill-mode: both;
+  /*&:hover {
+      animation: valid-rotate 2s both forwards linear infinite;
+  } */
 }
 
 @keyframes valid {
   0% {
-    opacity: 0;
     transform: translateX(20px);
   }
   100% {
-    opacity: 1;
-    transform: none;
+    transform: translateX(40px);
   }
 }
 .menu-plats__valid {
   border: 1px solid #99E2D0;
-  border-radius: 0 10px 10px 0;
   background: #99E2D0;
   height: 100%;
-  width: auto;
+  width: 50px;
   font-weight: 800;
   font-size: 2.5em;
   margin: -0.3em 0 0.3em 1.2em;
@@ -522,14 +525,17 @@ main {
   text-align: center;
   padding-top: 0.2em;
   color: white;
-  transform: rotate(0deg);
-  transform-origin: 50% 40%;
-  transition: transform 1000ms;
-}
-.menu-plats__valid i:hover {
-  transform: rotate(-360deg);
+  transform-origin: 50% 60%;
 }
 
+@keyframes valid-rotate {
+  0% {
+    transform: rotate(180deg) translateX(20px);
+  }
+  100% {
+    transform: rotate(360deg) translateX(40px);
+  }
+}
 .bouton-commander {
   display: inline-block;
   text-align: center;
@@ -579,7 +585,7 @@ main {
     align-items: center;
   }
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 769px) {
   .restaurants h2 {
     text-align: center;
   }
@@ -618,7 +624,12 @@ main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
+  }
+
+  .menu_soustitle {
+    max-width: 400px;
+    width: 100%;
   }
 }
 
