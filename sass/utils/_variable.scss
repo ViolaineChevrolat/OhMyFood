@@ -3,3 +3,6 @@ $color-secondaire: #FF79DA;
 $color-tertiaire: #99E2D0;
 $border-color: rgb(245, 244, 244);
 $color-button : linear-gradient($color-secondaire, $color-primaire);
+$anim-loader: 3000s;
+$anim-loader-delay: 150ms;
+$restaurants-delay: $anim-loader + $anim-loader-delay;
