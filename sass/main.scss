@@ -50,24 +50,6 @@ body {
 
 
 
-@keyframes loader-spinner {
-	0% {
-		width: 10px;
-		height: 10px;
-		background-color: $color-primaire;
-		transform: translateY(0);
-    }
-
-	100% {
-        width: 23px;
-		height: 23px;
-		background-color: $color-secondaire;
-        transform: translateY(-20px);
-        display: none;
-        z-index: -100;
-
-	}
-}
 
 .loader-spinner {
     opacity: 1;
@@ -75,17 +57,6 @@ body {
     animation: loader-end 2s 2s both;
 }
 
-@keyframes loader-end {
-    0% {
-        opacity: 1;
-    }
-    
-    100% {
-        opacity: 0;
-        display: none;
-        z-index: -100;
-    }
-}
 
 
 // header
@@ -342,8 +313,22 @@ main {
     }
 }    
 
+.menu-title {
+    @include resto-titre;  
+    white-space: normal; 
+    & h2 {
+        margin-bottom: 0;     
+    }
+    & i {
+        font-size: 1.5em;
+        margin-right: 0.3em;
+        text-align: center;
+    }
+}
+
 .resto-heart {
     @include heart;
+    margin-top: 0.8em;
     & i {
         position: relative;
         &:hover {
@@ -354,25 +339,6 @@ main {
         }
     }
 }
-
-/*.animation-plats {
-    animation: animation-plats 1000ms 3200s both;
-    z-index: 99;
-}
-@keyframes animation-plats {
-    0% {
-        margin-bottom: -70px;
-        opacity: 0;
-        transform: scaleY(0);
-        transform-origin: 100% 0%;
-    }
-    100% {
-        margin-bottom: 0px;
-        opacity: 1;
-        transform: scaleY(1);
-        transform-origin: 100% 0%;
-    }
-}*/
   
 .menu {
     position: relative;
@@ -395,55 +361,35 @@ main {
     width: 3em;
 }
 
-.menu-title {
-    @include resto-titre;
-    & i {
-        font-size: 1.5em;
-        margin-right: 0.3em;
-    }
-}
-
 .menu_soustitle {
     margin: 1em 1em 2em 1em;
 }
 
 
-/*
+
 .anim-menu-plats {
-    /*position: absolute;
-    display: none;*/
-    /*overflow: hidden;
     opacity: 1;
-    animation: anim-menu-plats 2.5s forwards;
-}
+    animation: anim-menus-plat 2000ms both;
+    & .menu-plats :nth-child(1){
+        animation-delay: 100ms;
+        }
+    }
+
 
 @keyframes anim-menus-plat {
     0% {
         opacity: 0;
-        transform: translateY(0.2);
-    }
-    25% {
-        margin-top: -70px;
-        opacity: 0.3;
-        transform: translateY(0.4);
-    }
-    50% {
-        opacity: 0.6;
-        transform: translateY(0.6);
-    }
-    75% {
-        opacity: 1;
-        transform: translateY(0.8);
+        transform: scaleY(0);
+        transform-origin: 100% 0%;
     }
     100% {
-        margin-top: 0;
-        transform: translateY(1);
+        opacity: 1;
+        transform: scaleY(1);
+        transform-origin: 100% 0%;
     }
-}*/
+}
 
-/*.anim-menu-plats-end {
 
-}*/
 .menu-plats {
     @include menu-plats;
     display: flex;
@@ -454,14 +400,17 @@ main {
     text-overflow: ellipsis;
     cursor: pointer;
     &:hover .prix-valid {
-        animation: valid 2s forwards;
+        animation: valid 2500ms both;
+        & .fa-check-circle {
+            animation: i-rotate 1500ms 500ms both;
+        }
     }
 }
 
 .menu-plats__details {
     display: inline;
     max-width: 280px;
-    width: 100%;
+    width: 100% ;
     margin-top: 0;
     text-align: left;
     overflow: hidden;
@@ -482,7 +431,6 @@ main {
         white-space: nowrap;
         text-overflow: ellipsis;
     }
-
 }
 
 .prix-valid {
@@ -495,38 +443,6 @@ main {
     right: -4.2em;
 }
 
-@keyframes valid {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-4.1em);
-        text-overflow: ellipsis;
-    }
-}
-
-@keyframes i-rotate {
-    0% {
-        transform: rotate(72deg);
-        transform: translateX(0);
-    }
-    25% {
-        transform: rotate(144deg);
-        transform: translateX(-0.5em);
-    }
-    50% {
-        transform: rotate(216deg);
-        transform: translateX(-1em);
-    }
-    75% {
-        transform: rotate(288deg);
-        transform: translateX(-1.5em);
-    }
-    100% {
-        transform: rotate(360deg);
-        transform: translateX(-2em);
-    }
-}
 
 .menu-plats__prix { 
     font-weight: 800;
@@ -536,13 +452,6 @@ main {
     white-space: nowrap;
     text-overflow: ellipsis;
     text-align: right;
-    & i {
-        font-size: 1.8em;
-        opacity: 0;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
 }
 
 
@@ -554,14 +463,13 @@ main {
     font-size: 2.5em;
     margin: -0.3em 0 0.3em 0;
     padding: 0.3em 0.3em 0 0.3em;
-    text-overflow: ellipsis;
+    white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
     & .fa-check-circle {
         text-align: center;
         padding-top: 0.2em;
         color: white;
-        transition: transform 2000ms;
-        animation: i-rotate 1500ms ease-in both forwards;
         transform-origin: 50% 60%;
     }
 }

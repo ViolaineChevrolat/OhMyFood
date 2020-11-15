@@ -22,6 +22,7 @@
     font-size: 1.5em;   
     text-align: right;
 }
+    
 
 
 @mixin button ($color: $color-secondaire) {
@@ -99,13 +100,13 @@
     font-size: 1.1em;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     color: black;
     margin: 0.5em 1em 0.5em 1em;
 }
 
 @mixin menu-plats {
-    /*max-width: 736px;*/
     border: 0 solid white;
     border-radius: 10px;
     background-color: white;
@@ -114,4 +115,54 @@
     padding: 0.8em 0em 0 0.8em;
 } 
 
+
+@keyframes loader-spinner {
+	0% {
+		width: 10px;
+		height: 10px;
+		background-color: $color-primaire;
+		transform: translateY(0);
+    }
+
+	100% {
+        width: 23px;
+		height: 23px;
+		background-color: $color-secondaire;
+        transform: translateY(-20px);
+        display: none;
+        z-index: -100;
+
+	}
+}
+
+
+@keyframes loader-end {
+    0% {
+        opacity: 1;
+    }
+    
+    100% {
+        opacity: 0;
+        display: none;
+        z-index: -100;
+    }
+}
+
+@keyframes valid {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-4.1em);
+    }
+}
+
+@keyframes i-rotate {
+    0% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
