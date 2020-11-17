@@ -26,10 +26,10 @@
 }
 @keyframes valid {
   0% {
-    transform: translateX(0);
+    margin-right: -4.2em;
   }
   100% {
-    transform: translateX(-4.1em);
+    margin-right: 0;
   }
 }
 @keyframes i-rotate {
@@ -48,13 +48,13 @@ body {
 }
 
 .loader-spinner {
-  display: block;
+  display: inline-block;
   text-align: center;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  margin: auto;
+  margin: 0;
   background-color: #f5f4f4;
   z-index: 99;
   position: fixed;
@@ -64,7 +64,7 @@ body {
   display: inline-block;
   width: 10px;
   height: 10px;
-  margin: 25rem auto;
+  margin: 50vh auto;
   background: #99E2D0;
   border-radius: 49px;
   z-index: 100;
@@ -91,10 +91,6 @@ body {
 
 .header {
   margin-top: 1em;
-}
-.header__logo {
-  text-align: center;
-  margin: 0.8em;
 }
 
 .header-choice {
@@ -166,10 +162,10 @@ body {
   }
   100% {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.35);
-    opacity: 0.95;
+    opacity: 0.9;
   }
 }
-main {
+main article {
   margin: 0;
 }
 
@@ -178,7 +174,7 @@ main {
   flex-direction: column;
   justify-content: center;
   margin-top: 1em;
-  margin-left: 1em;
+  margin-left: 0.8em;
 }
 .regles h2 {
   font-size: 1.3rem;
@@ -307,6 +303,57 @@ main {
   color: #28967c;
 }
 
+/*.coeur {
+    display: none;
+    position: relative; 
+    width: 25px; 
+    height: 25px; 
+    background: $color-button;
+    &::before {
+        position: absolute; 
+        bottom: 0px; 
+        left: -10px; 
+        width: 25px; 
+        height: 25px; 
+        content:"";
+        border-radius: 50%;
+        background: $color-button; 
+    } 
+    &::after {
+        position: absolute; 
+        top: -10px; 
+        right: 0px; 
+        width: 25px; 
+        height: 25px; 
+        content: "";
+        border-radius: 50%;
+        background: $color-button; 
+    } 
+}
+.coeur::before .coeur::after {
+    position: absolute; 
+    width: 25px;
+    height: 25px;
+    content: "";
+    border-radius: 50%; 
+    background: $color-button; 
+} 
+.coeur::before {
+    bottom: 0px;
+    left: -10px; 
+} 
+.coeur::after {
+    top: -10px;
+    right: 0px;
+} 
+
+.coeur {
+    margin-right: 1em;
+    top: 0.7em;
+    transform: rotate(45deg); 
+} 
+
+*/
 .index-heart {
   font-size: 1.5em;
   text-align: right;
@@ -316,9 +363,9 @@ main {
 }
 .index-heart i:hover {
   clip-path: polygon(51% 22%, 44% 10%, 33% 6%, 19% 6%, 6% 12%, 0 26%, 4% 46%, 11% 58%, 24% 72%, 36% 83%, 54% 98%, 69% 84%, 80% 72%, 91% 57%, 98% 45%, 99% 28%, 96% 12%, 84% 5%, 72% 5%, 60% 9%);
-  background-image: linear-gradient(#FF79DA, #9356DC);
+  background: linear-gradient(#FF79DA, #9356DC);
   -webkit-text-fill-color: transparent;
-  transition-duration: 70ms;
+  transition-duration: 3s;
 }
 
 .footer {
@@ -327,12 +374,17 @@ main {
   background-color: #3a3939;
   flex-direction: column;
 }
-.footer img {
-  width: 100px;
-  padding-bottom: 1.2em;
+.footer-logo {
+  font-family: Shrikhand;
+  font-size: 1.5em;
+  color: white;
+  padding-bottom: 0.8em;
+}
+.footer-logo h5 {
+  margin: 0;
 }
 .footer i {
-  flex-direction: wrap;
+  flex-direction: row;
   padding-right: 0.8em;
 }
 .footer .fa-hands-helping {
@@ -365,17 +417,21 @@ main {
   font-weight: 900;
   color: black;
   position: absolute;
-  margin-right: 2rem;
+  margin: 0.2em 0 0 1em;
   text-align: start;
 }
-.header__logo img {
+.header__logo .logo {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
+  font-family: Shrikhand;
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0 0 0.2em 0;
 }
 
 .header-restaurant {
   position: relative;
+  margin: 0;
   z-index: 1;
 }
 .header-restaurant img {
@@ -411,26 +467,39 @@ main {
 }
 .resto-heart i {
   position: relative;
+  transition-duration: 70ms;
 }
 .resto-heart i:hover {
   clip-path: polygon(51% 22%, 44% 10%, 33% 6%, 19% 6%, 6% 12%, 0 26%, 4% 46%, 11% 58%, 24% 72%, 36% 83%, 54% 98%, 69% 84%, 80% 72%, 91% 57%, 98% 45%, 99% 28%, 96% 12%, 84% 5%, 72% 5%, 60% 9%);
   background-image: linear-gradient(#FF79DA, #9356DC);
   -webkit-text-fill-color: transparent;
-  transition-duration: 70ms;
 }
 
+/*
+.coeur {
+   width: 30px;
+   height: 30px;
+    margin-top: 0.8em;
+    clip-path: polygon(51% 22%, 44% 10%, 33% 6%, 19% 6%, 6% 12%, 0 26%, 4% 46%, 11% 58%, 24% 72%, 36% 83%, 54% 98%, 69% 84%, 80% 72%, 91% 57%, 98% 45%, 99% 28%, 96% 12%, 84% 5%, 72% 5%, 60% 9%);
+    background: white;
+    border: 1px solid black;
+    position: relative;
+    transition-duration: 70ms;
+        &:hover {
+            clip-path: polygon(51% 22%, 44% 10%, 33% 6%, 19% 6%, 6% 12%, 0 26%, 4% 46%, 11% 58%, 24% 72%, 36% 83%, 54% 98%, 69% 84%, 80% 72%, 91% 57%, 98% 45%, 99% 28%, 96% 12%, 84% 5%, 72% 5%, 60% 9%);
+            background: $color-button;
+            -webkit-text-fill-color: transparent;
+        }
+
+}*/
 .menu {
   position: relative;
-  background: white;
   display: flex;
   flex-direction: column;
   margin: -3em 0 0 0;
   border: 1px solid #f5f4f4;
   border-radius: 30px 30px 0 0;
   background-color: #f5f4f4;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
   z-index: 2;
 }
 .menu h3 {
@@ -492,12 +561,12 @@ main {
 
 .menu-plats__details {
   display: inline;
-  max-width: 280px;
+  max-width: 400px;
   width: 100%;
   margin-top: 0;
   text-align: left;
-  overflow: hidden;
   white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
   z-index: 1;
 }
@@ -505,14 +574,15 @@ main {
   font-weight: bold;
   font-size: 1.1em;
   margin: 0;
-  overflow: hidden;
   white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 .menu-plats__details p {
+  /*width: 80%;*/
   margin: 0.8em 0;
-  overflow: hidden;
   white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 
@@ -521,9 +591,9 @@ main {
   flex-direction: row;
   text-align: right;
   justify-content: space-evenly;
+  margin-right: -4.2em;
   z-index: 2;
   position: relative;
-  right: -4.2em;
 }
 
 .menu-plats__prix {
@@ -556,7 +626,6 @@ main {
 }
 
 .bouton-commander {
-  display: inline-block;
   text-align: center;
 }
 
@@ -583,7 +652,7 @@ main {
   text-decoration: none;
 }
 
-@media screen and (min-width: 568px) {
+@media screen and (min-width: 600px) {
   .regles {
     align-items: center;
     display: flex;

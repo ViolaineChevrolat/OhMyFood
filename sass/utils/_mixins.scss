@@ -150,10 +150,10 @@
 
 @keyframes valid {
     0% {
-        transform: translateX(0);
+        margin-right: -4.2em;
     }
     100% {
-        transform: translateX(-4.1em);
+        margin-right: 0;
     }
 }
 
