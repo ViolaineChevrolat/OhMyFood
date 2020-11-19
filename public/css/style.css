@@ -447,19 +447,61 @@ main article {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  color: black;
-  margin: 0.5em 1em 0.5em 1em;
+  margin: 0.8em 1em 0.5em 1em;
   white-space: normal;
 }
 .menu-title h2 {
   margin-bottom: 0;
+  margin-top: 0;
 }
-.menu-title i {
-  font-size: 1.5em;
-  margin-right: 0.3em;
-  text-align: center;
+.menu-title p {
+  margin-top: 0;
 }
 
+/*
+.resto-heart {
+    cursor: pointer;
+    &:hover {
+        & .resto-heart {
+        display: none;
+        & .resto-heart-anim {
+            display: contents;
+            background-color: linear-gradient($color-primaire, $color-secondaire);
+            background-clip: border-box;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+}
+}
+.resto-heart-anim {
+    position: absolute;
+    display: none;
+    cursor: pointer;
+}*/
+/*.resto-heart {
+    font-size: 24px;
+    -webkit-text-stroke: 1px black;
+    color: transparent;
+    cursor: pointer;
+    &:hover {
+        & .resto-heart {
+        display: none;
+        }
+        & .resto-heart-anim {
+            display: contents;
+        }
+    }
+}
+
+.resto-heart-anim {
+    position: absolute;
+    font-size: 25px;
+    display: none;
+    background-color: $color-button;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+}*/
 .resto-heart {
   font-size: 1.5em;
   text-align: right;
