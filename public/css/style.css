@@ -259,6 +259,7 @@ main article {
   margin: 0 1em 0.5em 1em;
   line-height: 0.5em;
   margin-top: -0.5em;
+  margin-bottom: 0;
 }
 .restaurants-list__details h3 {
   font-size: 1.2em;
@@ -354,20 +355,53 @@ main article {
 } 
 
 */
-.index-heart {
-  font-size: 1.5em;
-  text-align: right;
-}
-.index-heart i {
-  margin-top: 0.6em;
-}
-.index-heart i:hover {
-  clip-path: polygon(51% 22%, 44% 10%, 33% 6%, 19% 6%, 6% 12%, 0 26%, 4% 46%, 11% 58%, 24% 72%, 36% 83%, 54% 98%, 69% 84%, 80% 72%, 91% 57%, 98% 45%, 99% 28%, 96% 12%, 84% 5%, 72% 5%, 60% 9%);
-  background: linear-gradient(#FF79DA, #9356DC);
-  -webkit-text-fill-color: transparent;
-  transition-duration: 3s;
+.index-coeur {
+  padding-top: 2em;
+  transform: translate(-50%, -50%);
 }
 
+.index-heart {
+  cursor: pointer;
+}
+
+.index-heart-anim {
+  font-size: 1em;
+  position: absolute;
+  left: -0.15em;
+  top: 0.45em;
+  background: linear-gradient(#FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  transform: scale(0);
+  transition: 700ms ease;
+}
+
+.index-heart:hover .index-heart-anim {
+  transform: scale(0.68);
+  opacity: 1;
+}
+
+.index-heart:hover {
+  background: linear-gradient(#FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0px white;
+}
+
+/*
+.index-heart {
+    @include heart;
+    & i {
+        margin-top: 0.6em;
+        &:hover {
+            clip-path: polygon(51% 22%, 44% 10%, 33% 6%, 19% 6%, 6% 12%, 0 26%, 4% 46%, 11% 58%, 24% 72%, 36% 83%, 54% 98%, 69% 84%, 80% 72%, 91% 57%, 98% 45%, 99% 28%, 96% 12%, 84% 5%, 72% 5%, 60% 9%);
+            background: $color-button;
+            -webkit-text-fill-color: transparent;
+            transition-duration: 3s;
+        }
+    }
+}*/
 .footer {
   display: flex;
   padding: 2em 1em 2em 1.5em;
@@ -454,82 +488,44 @@ main article {
   margin-bottom: 0;
 }
 
-/*
-.resto-heart {
-    cursor: pointer;
-    &:hover {
-        & .resto-heart {
-        display: none;
-        & .resto-heart-anim {
-            display: contents;
-            background-color: linear-gradient($color-primaire, $color-secondaire);
-            background-clip: border-box;
-            -webkit-text-fill-color: transparent;
-        }
-    }
-}
-}
-.resto-heart-anim {
-    position: absolute;
-    display: none;
-    cursor: pointer;
-}*/
-/*.resto-heart {
-    font-size: 24px;
-    -webkit-text-stroke: 1px black;
-    color: transparent;
-    cursor: pointer;
-    &:hover {
-        & .resto-heart {
-        display: none;
-        }
-        & .resto-heart-anim {
-            display: contents;
-        }
-    }
-}
-
-.resto-heart-anim {
-    position: absolute;
-    font-size: 25px;
-    display: none;
-    background-color: $color-button;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    cursor: pointer;
-}*/
-.resto-heart {
+.fa-heart {
   font-size: 1.5em;
-  text-align: right;
   margin-top: 0.8em;
 }
-.resto-heart i {
-  position: relative;
-  transition-duration: 70ms;
+
+.resto-heart {
+  transform: translate(-50%, -50%);
 }
-.resto-heart i:hover {
-  clip-path: polygon(51% 22%, 44% 10%, 33% 6%, 19% 6%, 6% 12%, 0 26%, 4% 46%, 11% 58%, 24% 72%, 36% 83%, 54% 98%, 69% 84%, 80% 72%, 91% 57%, 98% 45%, 99% 28%, 96% 12%, 84% 5%, 72% 5%, 60% 9%);
-  background-image: linear-gradient(#FF79DA, #9356DC);
+
+.heart {
+  cursor: pointer;
+}
+
+.heart-anim {
+  font-size: 1em;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(#FF79DA, #9356DC);
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  opacity: 0;
+  transform: scale(0);
+  transition: 700ms ease;
 }
 
-/*
-.coeur {
-   width: 30px;
-   height: 30px;
-    margin-top: 0.8em;
-    clip-path: polygon(51% 22%, 44% 10%, 33% 6%, 19% 6%, 6% 12%, 0 26%, 4% 46%, 11% 58%, 24% 72%, 36% 83%, 54% 98%, 69% 84%, 80% 72%, 91% 57%, 98% 45%, 99% 28%, 96% 12%, 84% 5%, 72% 5%, 60% 9%);
-    background: white;
-    border: 1px solid black;
-    position: relative;
-    transition-duration: 70ms;
-        &:hover {
-            clip-path: polygon(51% 22%, 44% 10%, 33% 6%, 19% 6%, 6% 12%, 0 26%, 4% 46%, 11% 58%, 24% 72%, 36% 83%, 54% 98%, 69% 84%, 80% 72%, 91% 57%, 98% 45%, 99% 28%, 96% 12%, 84% 5%, 72% 5%, 60% 9%);
-            background: $color-button;
-            -webkit-text-fill-color: transparent;
-        }
+.heart:hover .heart-anim {
+  transform: scale(1);
+  opacity: 1;
+}
 
-}*/
+.heart:hover {
+  background: linear-gradient(#FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0px white;
+}
+
 .menu {
   position: relative;
   display: flex;
