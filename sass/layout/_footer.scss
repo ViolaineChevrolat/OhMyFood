@@ -1,0 +1,35 @@
+// footer identique à l'accueil et aux 4 pages restos
+
+.footer {
+    @include footer;
+    flex-direction: column;
+    &-logo {
+        font-family: Shrikhand;
+        font-size: 1.5em;
+        color: white;
+        padding-bottom: 0.8em;
+        & h5 {
+            margin: 0;
+        }   
+    }
+        & i {
+            flex-direction: row;
+            padding-right: 0.8em;
+        }
+    & .fa-hands-helping {
+        font-size: 0.8em;
+    }
+}
+
+.footer-a {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.3em;
+    & a {
+        color: white;
+        text-decoration: none;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

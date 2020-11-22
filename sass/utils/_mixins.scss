@@ -22,8 +22,6 @@
     font-size: 1.5em;   
     text-align: right;
 }
-    
-
 
 @mixin button ($color: $color-secondaire) {
     background-image: $color-button;
@@ -115,54 +113,4 @@
     padding: 0.8em 0em 0 0.8em;
 } 
 
-
-@keyframes loader-spinner {
-	0% {
-		width: 10px;
-		height: 10px;
-		background-color: $color-primaire;
-		transform: translateY(0);
-    }
-
-	100% {
-        width: 23px;
-		height: 23px;
-		background-color: $color-secondaire;
-        transform: translateY(-20px);
-        display: none;
-        z-index: -100;
-
-	}
-}
-
-
-@keyframes loader-end {
-    0% {
-        opacity: 1;
-    }
-    
-    100% {
-        opacity: 0;
-        display: none;
-        z-index: -100;
-    }
-}
-
-@keyframes valid {
-    0% {
-        margin-right: -4.2em;
-    }
-    100% {
-        margin-right: 0;
-    }
-}
-
-@keyframes i-rotate {
-    0% {
-        transform: rotate(180deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
 

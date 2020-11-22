@@ -1,0 +1,188 @@
+// vignettes restaurants index
+
+
+.restaurants {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 2.5em;
+    background-color: $border-color;
+    & h2 {
+        @include titres;
+        padding-top: 1em;
+    }
+    &-list {
+        @include vignettes;
+        position: relative;
+        & figure {
+            margin: 0;
+        }
+        & a {
+            text-decoration: none;
+            transform: scale(1);
+            transition-property: transform;
+            transition-duration: 400ms;
+            & a:hover {
+            text-decoration: none;
+            transform: scale(1.15);
+            }
+        }
+        &__details {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            @include details;
+            & h3 {
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+        }
+        & img {
+            object-fit: cover;
+            width: 100%;
+            height: auto;
+            border-radius: 18px 18px 0 0;
+        }
+
+    }
+}
+
+
+.restaurants-list__new1 {
+    @include new;
+}
+
+.restaurants-list__new2 {
+    @include new;
+}
+
+
+
+// 4 pages restaurants
+
+.menu-title {
+    @include resto-titre;  
+    white-space: normal; 
+    & h2 {
+        margin: 0.2em 0;   
+        width: 80%;  
+    }
+}
+
+.menu {
+    position: relative;
+    @include menu;
+    & h3 {
+        font-size: 1.2em;
+        font-weight: 400;
+        margin-bottom: 0.5em;
+    }
+    z-index: 2;
+}
+
+
+.trait {
+    border: 2px $color-tertiaire solid;
+    width: 3em;
+}
+
+.menu_soustitle {
+    margin: 1em 1em 2em 1em;
+}
+
+
+.anim-menu-plats {
+    opacity: 1;
+    animation: anim-menus-plat 2000ms both;
+    & .menu-plats :nth-child(1){
+        animation-delay: 100ms;
+        }
+    }
+
+.menu-plats {
+    @include menu-plats;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    &:hover .prix-valid {
+        animation: valid 2500ms both;
+        & .fa-check-circle {
+            animation: i-rotate 1500ms 500ms both;
+        }
+    }
+}
+
+.menu-plats__details {
+    display: inline;
+    max-width: 400px;
+    width: 100% ;
+    margin-top: 0;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 1;
+    & h4 {
+        font-weight: bold;
+        font-size: 1.1em;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    & p {
+        margin: 0.8em 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.prix-valid {
+    display: flex;
+    flex-direction: row;
+    text-align: right;
+    justify-content: space-evenly;
+    margin-right: -4.2em;
+    z-index: 2;
+    position: relative;
+
+}
+
+
+.menu-plats__prix { 
+    font-weight: 800;
+    font-size: 1.2em;
+    margin-right: .5em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: right;
+}
+
+
+.menu-plats__valid {
+    border: 1px solid $color-tertiaire;
+    background: $color-tertiaire;
+    height: 100%;
+    font-weight: 800;
+    font-size: 2.5em;
+    margin: -0.3em 0 0.3em 0;
+    padding: 0.3em 0.3em 0 0.3em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    & .fa-check-circle {
+        text-align: center;
+        padding-top: 0.2em;
+        color: white;
+        transform-origin: 50% 60%;
+    }
+
+}
+

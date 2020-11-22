@@ -1,0 +1,40 @@
+//coeur des pages resto
+
+.fa-heart {
+    font-size: 1.5em;
+    margin-top: 0.8em;
+}
+.resto-heart {
+    transform: translate(-50%, -50%);
+}
+
+.heart {
+    cursor: pointer;
+}
+
+.heart-anim {
+    font-size: 1em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: $color-button;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transform: scale(0);
+    transition: 700ms ease;
+}
+
+.heart:hover .heart-anim {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.heart:hover {
+    background: $color-button;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0px white;
+}
+
+  

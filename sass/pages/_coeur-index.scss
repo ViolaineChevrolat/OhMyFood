@@ -1,0 +1,35 @@
+//coeur sur chaque vignettes resto de la page d'accueil
+
+.index-coeur {
+    padding-top: 2em;
+    transform: translate(-50%, -50%);
+}
+
+.index-heart {
+    cursor: pointer;
+}
+
+.index-heart-anim {
+    font-size: 1em;
+    position: absolute;
+    left: -0.16em;
+    top: 0.45em;
+    background: $color-button;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transform: scale(0);
+    transition: 700ms ease;
+}
+
+.index-heart:hover .index-heart-anim {
+    transform: scale(0.68);
+    opacity: 1;
+}
+
+.index-heart:hover {
+    background: $color-button;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0px white;
+}

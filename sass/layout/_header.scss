@@ -1,0 +1,88 @@
+// header commun
+
+.header {
+    margin-top: 1em;
+}
+
+
+.header__logo {
+    display: block;
+    text-align: start;
+    & a {
+        cursor: pointer;
+    }
+    & i {
+        display: inline-block;
+        font-size: 1.5em;
+        font-weight: 900;
+        color: black;
+        position: absolute;
+        margin: 0.2em 0 0 1em;  
+        text-align: start; 
+    }
+    & .logo {
+        display: block;
+        text-align: center;
+        font-family: Shrikhand;
+        font-size: 2em;
+        font-weight: bold;
+        margin: 0 0 0.2em 0;
+    }
+}
+
+
+// header index
+
+.header-choice {
+    padding: 1em 0;
+    margin-top: 0;
+    background-color: $border-color;
+    text-align: center;
+    & h1 {
+        font-size: 1.4rem;
+        font-weight: 900;
+        font-family: roboto, calibri, sans-serif;
+        margin: 1em;
+    }
+    & p {
+        font-size: 1em;
+        line-height: 1.2em;
+        margin: 1em;
+    }
+}
+
+.header-nav {
+    background: linear-gradient(rgb(168, 167, 167), 1%, rgb(238, 236, 236));
+    text-align: center;
+    padding-bottom: 0.5em;
+    & form {
+        padding-top: 0.5em;
+        text-align: center;
+    }
+        & input[type=text] {
+            width: 150px;
+            border: none;
+            text-align: center;
+            background-color: rgb(228, 227, 227);
+            font-weight: bold;
+            font-size: 1.2em;
+            color: black;
+        }
+        & i {
+            font-size: 1em;
+        }
+}
+
+
+// header pages resto
+
+.header-restaurant {
+    position: relative;
+    margin: 0;
+    z-index: 1;
+        & img {
+        object-fit: cover;
+        height: 250px;
+        width: 100%;
+    }
+}    

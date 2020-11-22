@@ -1,0 +1,31 @@
+
+.button {
+    @include button;
+    &:hover {
+        animation: anim-shadow-button 0.3s both;
+    }
+    outline: none;
+        & a {
+        color: white;
+        text-decoration: none;
+    }
+}
+
+
+
+.bouton-commander {
+    text-align: center;
+}
+
+.button_resto {
+    @include button;
+    outline: none;
+    opacity: 1;
+    &:hover {
+        animation: anim-shadow-button 0.3s both;
+    }
+        & a {
+        color: white;
+        text-decoration: none;
+    }
+}
